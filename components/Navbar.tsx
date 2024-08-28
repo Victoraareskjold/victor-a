@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -9,7 +10,7 @@ export default function Navbar() {
   return (
     <nav className="flex w-full justify-between py-4 text-white">
       <Link href="/" className="text-[var(--color-primary)] font-medium">
-        Logo
+        <Image alt="logo" height="20" width="20" src="logo.svg" />
       </Link>
       <div className="flex flex-row gap-4">
         <Link
