@@ -1,5 +1,4 @@
 import { Project } from "../types";
-import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -9,7 +8,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link href={`/${project.id}`} className="project-card">
-      <Image
+      <img
         className="max-h-44 h-44 w-full object-cover object-top rounded-md"
         src={project.heroImage}
         alt={project.name}
