@@ -1,21 +1,23 @@
 import { getProjects } from "../utils/firebaseFunctions";
 import { Project } from "../../types";
+import { notFound } from "next/navigation";
 
-// Denne funksjonen henter prosjektdata basert på ID
-export async function getProjectData(id: string): Promise<Project | null> {
-  const projects = await getProjects();
-  return projects.find((project) => project.id === id) || null;
+interface Props {
+  params: {
+    id: string;
+  };
 }
 
-export default async function ProjectPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const project = await getProjectData(params.id);
+export default async function ProjectPage({ params }: Props) {
+  const { id } = params;
+
+  // Hent alle prosjekter og filtrer basert på ID
+  const projects = await getProjects();
+  const project = projects.find((project) => project.id === id) || null;
 
   if (!project) {
-    return <p>Prosjektet ble ikke funnet.</p>;
+    // Returner en 404-side hvis prosjektet ikke finnes
+    notFound();
   }
 
   return (
