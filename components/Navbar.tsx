@@ -16,17 +16,17 @@ export default function Navbar() {
           href="/about"
           className={
             pathname === "/about"
-              ? "hover:text-[var(--color-primary)]"
+              ? "hover:text-[var(--color-primary)] font-medium"
               : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
-          Om Meg
+          Om meg
         </Link>
         <Link
           href="/blog"
           className={
             pathname === "/blog"
-              ? "hover:text-[var(--color-primary)]"
+              ? "hover:text-[var(--color-primary)] font-medium"
               : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >

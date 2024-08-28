@@ -34,7 +34,8 @@ main {
 }
 
 a {
-  color: black;
+  color: var(--color-lightPrimary);
+  font-size: 0.85rem;
 }
 
 h1 {
@@ -82,4 +83,9 @@ p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.btn {
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
 }

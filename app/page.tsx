@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getProjects } from "./utils/firebaseFunctions";
 import { Project } from "../types";
+import Image from "next/image";
 
 import ProjectCard from "../components/ProjectCard";
 /* import ProjectExperiences from "../components/ProjectExperiences"; */
@@ -32,8 +33,14 @@ export default function Home() {
           </h1>
           <p className="mb-8">Jeg kunne hvertfall ønske at jeg var det..</p>
         </div>
-        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
-          <p>Min CV</p>
+        <a
+          className="w-fit block bg-[var(--color-grey)] py-1 px-3 rounded-full flex flex-row gap-2"
+          href="resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p className="btn">Min CV</p>
+          <Image alt="Link" src="link.svg" width="10" height="10" />
         </a>
       </section>
 
