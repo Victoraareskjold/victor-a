@@ -46,7 +46,7 @@ export default function Home() {
 
       <section className="flex flex-col w-full align-center gap-4">
         <h3>Mine Prosjekter</h3>
-        <div className="flex flex-row flex-wrap gap-8 align-center">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 flex-wrap gap-8 align-center">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

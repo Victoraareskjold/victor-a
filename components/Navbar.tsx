@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="flex w-full justify-between py-4 text-white">
-      <Link href="/" className={"text-[var(--color-primary)]"}>
+      <Link href="/" className="text-[var(--color-primary)] font-medium">
         Logo
       </Link>
       <div className="flex flex-row gap-4">
@@ -33,7 +33,9 @@ export default function Navbar() {
           Blogg
         </Link>
       </div>
-      <button>Utseende knapp</button>
+      <button>
+        <p>Utseende knapp</p>
+      </button>
     </nav>
   );
 }
