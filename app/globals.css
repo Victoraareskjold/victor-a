@@ -4,7 +4,9 @@
 
 @layer base {
   :root {
-    --color-primary: #111111;
+    --color-primary: rgba(17, 17, 17, 1);
+    --color-lightPrimary: rgba(17, 17, 17, 0.6);
+    --color-grey: rgb(241, 241, 241);
   }
 }
 
@@ -21,6 +23,7 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   gap: 64px;
+  padding: 0 12px;
 }
 
 main {
@@ -36,11 +39,26 @@ a {
 
 h1 {
   font-size: 2rem;
+  font-family: var(--font-montserrat);
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+}
+
+h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: var(--font-montserrat);
+  color: var(--color-lightPrimary);
 }
 
 p {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-lightPrimary);
 }
 
 .headerText {
@@ -57,4 +75,11 @@ p {
 
 .bodyText {
   font-family: var(--font-inter);
+}
+
+.project-card {
+  max-width: 265px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

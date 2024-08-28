@@ -8,19 +8,16 @@ export default function Navbar() {
 
   return (
     <nav className="flex w-full justify-between py-4 text-white">
-      <Link
-        href="/"
-        className={
-          pathname === "/" ? "text-yellow-300" : "hover:text-yellow-300"
-        }
-      >
+      <Link href="/" className={"text-[var(--color-primary)]"}>
         Logo
       </Link>
       <div className="flex flex-row gap-4">
         <Link
           href="/about"
           className={
-            pathname === "/about" ? "text-yellow-300" : "hover:text-yellow-300"
+            pathname === "/about"
+              ? "hover:text-[var(--color-primary)]"
+              : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
           Om Meg
@@ -28,7 +25,9 @@ export default function Navbar() {
         <Link
           href="/blog"
           className={
-            pathname === "/blog" ? "text-yellow-300" : "hover:text-yellow-300"
+            pathname === "/blog"
+              ? "hover:text-[var(--color-primary)]"
+              : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
           Blogg
