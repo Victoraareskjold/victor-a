@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <section>
-      <p>Laget i next.js ...</p>
+    <section className="p-2 text-center">
+      <p>Laget i Next.js med TypeScript</p>
     </section>
   );
 }

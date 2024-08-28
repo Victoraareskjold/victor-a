@@ -1,10 +1,18 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import { Project } from "../../types";
 
-export async function getProjects(): Promise<Project[]> {
+export async function getProjects(projectId?: string): Promise<Project[]> {
   const projectsCollection = collection(db, "work");
-  const projectsSnapshot = await getDocs(projectsCollection);
+
+  let q;
+  if (projectId) {
+    q = query(projectsCollection, where("id", "==", projectId));
+  } else {
+    q = query(projectsCollection);
+  }
+
+  const projectsSnapshot = await getDocs(q);
 
   const projectsList = projectsSnapshot.docs.map((doc) => {
     const data = doc.data();

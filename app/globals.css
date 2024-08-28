@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --color-primary: rgba(17, 17, 17, 1);
-    --color-lightPrimary: rgba(17, 17, 17, 0.6);
+    --color-lightPrimary: rgba(17, 17, 17, 0.7);
     --color-grey: rgb(241, 241, 241);
   }
 }

@@ -1,28 +1,21 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { Project } from "../../types";
 import { getProjects } from "../utils/firebaseFunctions";
+import { Project } from "../../types";
 
-export default function ProjectPage() {
-  const [project, setProject] = useState<Project | null>(null);
-  const router = useRouter();
-  const { id } = router.query;
+// Denne funksjonen henter prosjektdata basert på ID
+export async function getProjectData(id: string): Promise<Project | null> {
+  const projects = await getProjects();
+  return projects.find((project) => project.id === id) || null;
+}
 
-  useEffect(() => {
-    if (id) {
-      const fetchProject = async () => {
-        const data = await getProjects(id as string);
-        setProject(data);
-      };
-
-      fetchProject();
-    }
-  }, [id]);
+export default async function ProjectPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const project = await getProjectData(params.id);
 
   if (!project) {
-    return <p>Laster...</p>;
+    return <p>Prosjektet ble ikke funnet.</p>;
   }
 
   return (

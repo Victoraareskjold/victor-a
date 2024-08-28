@@ -13,11 +13,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProjects = async () => {
       const data = await getProjects();
-      if (Array.isArray(data)) {
-        setProjects(data);
-      } else {
-        setProjects([data]);
-      }
+      setProjects(data);
     };
 
     fetchProjects();
@@ -25,15 +21,20 @@ export default function Home() {
 
   return (
     <main>
-      <section className="flex flex-col gap-6">
-        <div className="flex flex-col gap-4">
-          <div>
-            <h1 className="headerText">Webutvikler,</h1>
-            <h1 className="headerTextBold">Victor Aareskjold</h1>
-          </div>
-          <p>Jeg kunne hvertfall ønske at jeg var det..</p>
+      <section>
+        <div>
+          <h1 className="headerText mb-2">
+            Webutvikler,
+            <br />
+            <span>
+              <h1 className="headerTextBold">Victor Aareskjold</h1>
+            </span>
+          </h1>
+          <p className="mb-8">Jeg kunne hvertfall ønske at jeg var det..</p>
         </div>
-        <a href="">Min CV</a>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          <p>Min CV</p>
+        </a>
       </section>
 
       <section className="flex flex-col w-full align-center gap-4">
