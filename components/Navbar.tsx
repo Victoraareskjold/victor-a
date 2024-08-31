@@ -34,8 +34,8 @@ export default function Navbar() {
           Blogg
         </Link>
       </div>
-      <button>
-        <p>Utseende knapp</p>
+      <button className="w-5 h-5">
+        <Image height="20" width="20" src="moon.svg" />
       </button>
     </nav>
   );
