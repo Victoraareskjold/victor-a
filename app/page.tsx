@@ -45,7 +45,11 @@ export default function Home() {
               <h1 className="headerTextBold">Victor Aareskjold</h1>
             </span>
           </h1>
-          <p className="mb-8">WTS.</p>
+          <p className="mb-8 max-w-lg">
+            I&apos;m a 22-year-old aspiring data engineer passionate about
+            coding and gaining hands-on experience. Explore my projects to see
+            what I&apos;ve been working on!
+          </p>
         </div>
         <a
           className="w-fit block bg-[var(--color-grey)] py-1 px-3 rounded-full flex flex-row gap-2"
