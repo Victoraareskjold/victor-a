@@ -35,7 +35,7 @@ export default function Navbar() {
         </Link>
       </div>
       <button className="w-5 h-5">
-        <Image height="20" width="20" src="moon.svg" />
+        <Image alt="themeSwitcher" height="20" width="20" src="moon.svg" />
       </button>
     </nav>
   );
