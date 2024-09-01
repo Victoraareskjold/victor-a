@@ -7,3 +7,9 @@ export interface Project {
   heroImage: string;
   pdf: string;
 }
+
+export interface Experience {
+  id: string;
+  title: string;
+  description: string;
+}

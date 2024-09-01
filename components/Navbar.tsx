@@ -21,7 +21,7 @@ export default function Navbar() {
               : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
-          Om meg
+          About me
         </Link>
         <Link
           href="/blog"
@@ -31,7 +31,7 @@ export default function Navbar() {
               : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
-          Blogg
+          Blog
         </Link>
       </div>
       <button className="w-5 h-5">

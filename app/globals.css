@@ -38,6 +38,10 @@ a {
   font-size: 0.85rem;
 }
 
+img {
+  overflow-clip-margin: unset;
+}
+
 h1 {
   font-size: 2rem;
   font-family: var(--font-montserrat);
@@ -45,9 +49,13 @@ h1 {
 
 h2 {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-montserrat);
   color: var(--color-primary);
+}
+
+h2 span {
+  font-weight: 700;
 }
 
 h3 {

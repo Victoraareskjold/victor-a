@@ -1,6 +1,6 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
-import { Project } from "../../types";
+import { Project, Experience } from "../../types";
 
 export async function getProjects(projectId?: string): Promise<Project[]> {
   const projectsCollection = collection(db, "work");
@@ -28,4 +28,30 @@ export async function getProjects(projectId?: string): Promise<Project[]> {
   });
 
   return projectsList;
+}
+
+export async function getExperience(
+  experienceId?: string
+): Promise<Experience[]> {
+  const experienceCollection = collection(db, "experience");
+
+  let q;
+  if (experienceId) {
+    q = query(experienceCollection, where("id", "==", experienceId));
+  } else {
+    q = query(experienceCollection);
+  }
+
+  const experienceSnapshot = await getDocs(q);
+
+  const experienceList = experienceSnapshot.docs.map((doc) => {
+    const data = doc.data();
+    return {
+      id: doc.id,
+      title: data.title || "",
+      description: data.description || "",
+    } as Experience;
+  });
+
+  return experienceList;
 }
