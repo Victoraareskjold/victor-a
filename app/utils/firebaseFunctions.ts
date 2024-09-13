@@ -23,7 +23,7 @@ export async function getProjects(projectId?: string): Promise<Project[]> {
       categories: data.categories || [],
       date: data.date || "",
       heroImage: data.heroImage || "",
-      pdf: data.pdf || "",
+      link: data.link || null,
     } as Project;
   });
 

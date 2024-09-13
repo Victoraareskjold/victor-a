@@ -5,7 +5,7 @@ export interface Project {
   categories: string[];
   date: string;
   heroImage: string;
-  pdf: string;
+  link: string;
 }
 
 export interface Experience {

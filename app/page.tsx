@@ -51,15 +51,25 @@ export default function Home() {
             what I&apos;ve been working on!
           </p>
         </div>
-        <a
-          className="w-fit block bg-[var(--color-grey)] py-1 px-3 rounded-full flex flex-row gap-2"
-          href="resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p className="btn">My Resume</p>
-          <Image alt="Link" src="link.svg" width="10" height="10" />
-        </a>
+
+        <div className="flex flex-row gap-4">
+          <a
+            className="w-fit block bg-[var(--color-primary)] py-1 px-3 rounded-full flex flex-row gap-2 items-center"
+            href="https://github.com/Victoraareskjold"
+            target="_blank"
+          >
+            <p className="btn">Victoraareskjold</p>
+            <Image alt="Link" src="github.svg" width="16" height="16" />
+          </a>
+          <a
+            className="w-fit block bg-[var(--color-grey)] py-1 px-3 rounded-full flex flex-row gap-2 items-center"
+            href="resume.pdf"
+            target="_blank"
+          >
+            <p className="btnSecondary">My Resume</p>
+            <Image alt="Link" src="link.svg" width="10" height="10" />
+          </a>
+        </div>
       </section>
 
       <section className="flex flex-col w-full align-center gap-4">

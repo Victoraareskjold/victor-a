@@ -21,7 +21,20 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <main>
-      <h1>{project.name}</h1>
+      <div>
+        <h1>{project.name}</h1>
+        {project.link ? (
+          <a
+            style={{ textDecoration: "underline", fontWeight: 500 }}
+            href={"https://" + project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit {project.name}
+          </a>
+        ) : null}
+      </div>
+
       <img src={project.heroImage} alt={project.name} />
       <p>{project.date}</p>
       <div dangerouslySetInnerHTML={{ __html: project.description }} />

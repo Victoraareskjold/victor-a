@@ -98,5 +98,11 @@ p {
 .btn {
   font-family: var(--font-inter);
   font-size: 0.8rem;
+  color: white;
+}
+
+.btnSecondary {
+  font-family: var(--font-inter);
+  font-size: 0.8rem;
   color: var(--color-primary);
 }
