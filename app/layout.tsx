@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Inter, Montserrat } from "next/font/google";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${montserrat.variable}`}>
         <Navbar />
         <main>{children}</main>
+        <Analytics />
         <Footer />
       </body>
     </html>
