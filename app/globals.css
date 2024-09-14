@@ -34,7 +34,6 @@ main {
 }
 
 a {
-  color: var(--color-lightPrimary);
   font-size: 0.85rem;
 }
 

@@ -8,7 +8,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex w-full justify-between py-4 text-white">
+    <nav className="flex w-full justify-between py-4 text-white items-center">
       <Link href="/" className="text-[var(--color-primary)] font-medium">
         <Image alt="logo" height="20" width="20" src="logo.svg" />
       </Link>
@@ -17,8 +17,8 @@ export default function Navbar() {
           href="/about"
           className={
             pathname === "/about"
-              ? "hover:text-[var(--color-primary)] font-medium"
-              : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
+              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium"
+              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
           About me
@@ -27,8 +27,8 @@ export default function Navbar() {
           href="/blog"
           className={
             pathname === "/blog"
-              ? "hover:text-[var(--color-primary)] font-medium"
-              : "text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
+              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium"
+              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
           }
         >
           Blog
