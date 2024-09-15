@@ -4,12 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
+import ThemeSwitcher from "./ThemeSwitcher";
+
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
     <nav className="flex w-full justify-between py-4 text-white items-center">
-      <Link href="/" className="text-[var(--color-primary)] font-medium">
+      <Link
+        href="/"
+        className="text-[var(--color-primary)] font-medium bg-white p-2 rounded-full"
+      >
         <Image alt="logo" height="20" width="20" src="logo.svg" />
       </Link>
       <div className="flex flex-row gap-4">
@@ -17,8 +22,8 @@ export default function Navbar() {
           href="/about"
           className={
             pathname === "/about"
-              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium"
-              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
+              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium dark:text-white"
+              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)] dark:text-[var(--color-lightWhite)] dark:hover:text-white"
           }
         >
           About me
@@ -27,16 +32,14 @@ export default function Navbar() {
           href="/blog"
           className={
             pathname === "/blog"
-              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium"
-              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)]"
+              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium dark:text-white"
+              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)] dark:text-[var(--color-lightWhite)] dark:hover:text-white"
           }
         >
           Blog
         </Link>
       </div>
-      <button className="w-5 h-5">
-        <Image alt="themeSwitcher" height="20" width="20" src="moon.svg" />
-      </button>
+      <ThemeSwitcher />
     </nav>
   );
 }

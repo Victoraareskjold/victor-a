@@ -25,6 +25,7 @@ export default async function ProjectPage({ params }: Props) {
         <h1>{project.name}</h1>
         {project.link ? (
           <a
+            className="dark:text-white"
             style={{ textDecoration: "underline", fontWeight: 500 }}
             href={"https://" + project.link}
             target="_blank"
@@ -36,8 +37,11 @@ export default async function ProjectPage({ params }: Props) {
       </div>
 
       <img src={project.heroImage} alt={project.name} />
-      <p>{project.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: project.description }} />
+      <p className="dark:text-[var(--color-lightWhite)]">{project.date}</p>
+      <div
+        className="dark:text-white"
+        dangerouslySetInnerHTML={{ __html: project.description }}
+      />
     </main>
   );
 }

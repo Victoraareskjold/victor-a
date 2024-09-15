@@ -38,14 +38,16 @@ export default function Home() {
     <main>
       <section>
         <div>
-          <h1 className="headerText mb-2">
+          <h1 className="headerText mb-2 dark:text-white">
             Web Developer,
             <br />
             <span>
-              <h1 className="headerTextBold">Victor Aareskjold</h1>
+              <h1 className="headerTextBold dark:text-white">
+                Victor Aareskjold
+              </h1>
             </span>
           </h1>
-          <p className="mb-8 max-w-lg">
+          <p className="mb-8 max-w-lg dark:text-[var(--color-lightWhite)]">
             I&apos;m a 22-year-old aspiring data engineer passionate about
             coding and gaining hands-on experience. Explore my projects to see
             what I&apos;ve been working on!
@@ -73,7 +75,7 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col w-full align-center gap-4">
-        <h3>Projects</h3>
+        <h3 className="dark:text-[var(--color-lightWhite)]">Projects</h3>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 flex-wrap gap-8 align-center">
           {loadingProjects
             ? Array(3)
@@ -86,7 +88,7 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col w-full align-center gap-4">
-        <h3>Experiences</h3>
+        <h3 className="dark:text-[var(--color-lightWhite)]">Experiences</h3>
         <div className="flex flex-col gap-8">
           {loadingExperiences
             ? Array(1)

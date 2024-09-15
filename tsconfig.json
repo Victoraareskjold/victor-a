@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/about"
+    "app/about",
+    "app/utils/ThemeProvider.js"
   ],
   "exclude": ["node_modules"]
 }

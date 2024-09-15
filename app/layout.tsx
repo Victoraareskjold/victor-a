@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
+import ThemeProvider from "./utils/ThemeProvider";
+import ThemeSwitcher from "./../components/ThemeSwitcher";
+
 import { Inter, Montserrat } from "next/font/google";
 
 import "./globals.css";
@@ -31,11 +34,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${montserrat.variable}`}>
-        <Navbar />
-        <main>{children}</main>
-        <Analytics />
-        <Footer />
+      <body
+        className={`${inter.variable} ${montserrat.variable} bg-lightBg dark:bg-darkBg min-h-screen transition-colors duration-300`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <main>{children}</main>
+          <Analytics />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

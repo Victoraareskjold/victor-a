@@ -13,10 +13,12 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
     >
       <div className="flex flex-col gap-1">
         <h2
-          className="font-medium"
+          className="font-medium dark:text-white"
           dangerouslySetInnerHTML={{ __html: experience.title }}
         ></h2>
-        <p className="line-clamp-2">{experience.description}</p>
+        <p className="line-clamp-2 dark:text-[var(--color-lightWhite)]">
+          {experience.description}
+        </p>
       </div>
     </Link>
   );

@@ -17,8 +17,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         alt={project.name}
       />
       <div className="flex flex-col gap-1">
-        <h2>{project.name}</h2>
-        <p className="line-clamp-2">{project.description}</p>
+        <h2 className="dark:text-white ">{project.name}</h2>
+        <p className="line-clamp-2 dark:text-[var(--color-lightWhite)]">
+          {project.description}
+        </p>
       </div>
     </Link>
   );
