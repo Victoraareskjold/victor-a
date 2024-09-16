@@ -6,6 +6,7 @@ export interface Project {
   date: string;
   heroImage: string;
   link: string;
+  priority: number;
 }
 
 export interface Experience {

@@ -19,8 +19,8 @@ const ThemeSwitcher = () => {
       <button
         onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
         type="button"
-        className={`relative w-16 h-8 bg-gray-100 rounded-full p-1 transition-colors duration-300 ease-in-out focus:outline-none ${
-          currentTheme === "dark" ? "bg-gray-100" : "bg-gray-300"
+        className={`relative w-16 h-8 bg-slate-200 rounded-full p-1 transition-colors duration-300 ease-in-out focus:outline-none ${
+          currentTheme === "dark" ? "bg-slate-200" : "bg-slate-200"
         }`}
       >
         {/* Sirkelen som beveger seg */}

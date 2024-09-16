@@ -1,4 +1,4 @@
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
 import { Project, Experience } from "../../types";
 
@@ -9,7 +9,7 @@ export async function getProjects(projectId?: string): Promise<Project[]> {
   if (projectId) {
     q = query(projectsCollection, where("id", "==", projectId));
   } else {
-    q = query(projectsCollection);
+    q = query(projectsCollection, orderBy("priority", "desc"));
   }
 
   const projectsSnapshot = await getDocs(q);
@@ -24,6 +24,7 @@ export async function getProjects(projectId?: string): Promise<Project[]> {
       date: data.date || "",
       heroImage: data.heroImage || "",
       link: data.link || null,
+      priority: data.priority || "",
     } as Project;
   });
 
