@@ -36,12 +36,29 @@ export default async function ProjectPage({ params }: Props) {
         ) : null}
       </div>
 
-      <img src={project.heroImage} alt={project.name} />
-      <p className="dark:text-[var(--color-lightWhite)]">{project.date}</p>
-      <div
-        className="dark:text-white"
-        dangerouslySetInnerHTML={{ __html: project.description }}
-      />
+      {project.heroImage && !project.preview ? (
+        <img src={project.heroImage} alt={project.name} />
+      ) : null}
+
+      {project.date ? (
+        <p className="dark:text-[var(--color-lightWhite)]">{project.date}</p>
+      ) : null}
+
+      {project.preview ? (
+        <div>
+          <div dangerouslySetInnerHTML={{ __html: project.preview }}></div>
+          <p className="mt-4 text-center">
+            &#8593; Try it out yourself &#8593;
+          </p>
+        </div>
+      ) : null}
+
+      {project.description ? (
+        <div
+          className="dark:text-white"
+          dangerouslySetInnerHTML={{ __html: project.description }}
+        />
+      ) : null}
     </main>
   );
 }

@@ -7,6 +7,7 @@ export interface Project {
   heroImage: string;
   link: string;
   priority: number;
+  preview: any;
 }
 
 export interface Experience {

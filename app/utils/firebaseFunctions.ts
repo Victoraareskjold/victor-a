@@ -18,13 +18,14 @@ export async function getProjects(projectId?: string): Promise<Project[]> {
     const data = doc.data();
     return {
       id: doc.id,
-      name: data.name || "",
-      description: data.description || "",
+      name: data.name || null,
+      description: data.description || null,
       categories: data.categories || [],
-      date: data.date || "",
-      heroImage: data.heroImage || "",
+      date: data.date || null,
+      heroImage: data.heroImage || null,
       link: data.link || null,
-      priority: data.priority || "",
+      priority: data.priority || null,
+      preview: data.preview || null,
     } as Project;
   });
 
