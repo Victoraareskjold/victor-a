@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main>{children}</main>
+          <main className="antialiased">{children}</main>
           <Analytics />
           <Footer />
         </ThemeProvider>

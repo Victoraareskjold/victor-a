@@ -7,10 +7,12 @@ import Image from "next/image";
 import ProjectCard from "../components/ProjectCard";
 import ProjectExperiences from "../components/ProjectExperiences";
 import LoadingPlaceholder from "../components/LoadingPlaceholder";
+import AvailabilityComponent from "@/components/AvailabilityComponent";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [experiences, setExperiences] = useState<Experience[]>([]);
+
   const [loadingProjects, setLoadingProjects] = useState(true);
   const [loadingExperiences, setLoadingExperiences] = useState(true);
 
@@ -54,7 +56,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 flex-wrap">
           <a
             className="w-fit block bg-[var(--color-primary)] py-1 px-3 rounded-full flex flex-row gap-2 items-center"
             href="https://github.com/Victoraareskjold"
@@ -71,6 +73,7 @@ export default function Home() {
             <p className="btnSecondary">My Resume</p>
             <Image alt="Link" src="link.svg" width="10" height="10" />
           </a>
+          {/* <AvailabilityComponent /> */}
         </div>
       </section>
 

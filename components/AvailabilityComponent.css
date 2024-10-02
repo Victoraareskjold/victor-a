@@ -1,0 +1,28 @@
+.wrapper {
+  align-items: center;
+  max-width: 120px;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+  vertical-align: middle; /* Teksten justeres vertikalt */
+}
+
+.marquee p {
+  margin-right: 4px;
+  display: inline-block;
+  line-height: 2.5;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
