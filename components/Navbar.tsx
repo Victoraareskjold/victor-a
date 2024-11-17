@@ -38,6 +38,16 @@ export default function Navbar() {
         >
           Blog
         </Link>
+        <Link
+          href="#certificates"
+          className={
+            pathname === "/blog"
+              ? "py-1 px-2 text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium dark:text-white"
+              : "py-1 px-2 text-[var(--color-lightPrimary)] hover:text-[var(--color-primary)] dark:text-[var(--color-lightWhite)] dark:hover:text-white"
+          }
+        >
+          Certificates
+        </Link>
       </div>
       <ThemeSwitcher />
     </nav>

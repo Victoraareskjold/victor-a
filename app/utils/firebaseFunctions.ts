@@ -1,6 +1,6 @@
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../lib/firebase";
-import { Project, Experience } from "../../types";
+import { Project, Certificate } from "../../types";
 
 export async function getProjects(projectId?: string): Promise<Project[]> {
   const projectsCollection = collection(db, "work");
@@ -32,28 +32,29 @@ export async function getProjects(projectId?: string): Promise<Project[]> {
   return projectsList;
 }
 
-export async function getExperience(
-  experienceId?: string
-): Promise<Experience[]> {
-  const experienceCollection = collection(db, "experience");
+export async function getCertificates(
+  certificateId?: string
+): Promise<Certificate[]> {
+  const certificateCollection = collection(db, "certificates");
 
   let q;
-  if (experienceId) {
-    q = query(experienceCollection, where("id", "==", experienceId));
+  if (certificateId) {
+    q = query(certificateCollection, where("id", "==", certificateId));
   } else {
-    q = query(experienceCollection);
+    q = query(certificateCollection);
   }
 
-  const experienceSnapshot = await getDocs(q);
+  const certificateSnapshot = await getDocs(q);
 
-  const experienceList = experienceSnapshot.docs.map((doc) => {
+  const certificateList = certificateSnapshot.docs.map((doc) => {
     const data = doc.data();
     return {
       id: doc.id,
       title: data.title || "",
-      description: data.description || "",
-    } as Experience;
+      course: data.course || "",
+      link: data.link || "",
+    } as Certificate;
   });
 
-  return experienceList;
+  return certificateList;
 }

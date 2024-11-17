@@ -10,8 +10,9 @@ export interface Project {
   preview: any;
 }
 
-export interface Experience {
+export interface Certificate {
   id: string;
   title: string;
-  description: string;
+  course: string;
+  link: string;
 }

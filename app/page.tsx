@@ -1,20 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getExperience, getProjects } from "./utils/firebaseFunctions";
-import { Experience, Project } from "../types";
+import { getCertificates, getProjects } from "./utils/firebaseFunctions";
+import { Certificate, Project } from "../types";
 import Image from "next/image";
 import ProjectCard from "../components/ProjectCard";
-import ProjectExperiences from "../components/ProjectExperiences";
+import ProjectCertificates from "../components/ProjectCertificates";
 import LoadingPlaceholder from "../components/LoadingPlaceholder";
 import AvailabilityComponent from "@/components/AvailabilityComponent";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [experiences, setExperiences] = useState<Experience[]>([]);
+  const [certificates, setCertificates] = useState<Certificate[]>([]);
 
   const [loadingProjects, setLoadingProjects] = useState(true);
-  const [loadingExperiences, setLoadingExperiences] = useState(true);
+  const [loadingCertificates, setLoadingCertificates] = useState(true);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -27,13 +27,13 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const fetchExperiences = async () => {
-      const data = await getExperience();
-      setExperiences(data);
-      setLoadingExperiences(false);
+    const fetchCertificates = async () => {
+      const data = await getCertificates();
+      setCertificates(data);
+      setLoadingCertificates(false);
     };
 
-    fetchExperiences();
+    fetchCertificates();
   }, []);
 
   return (
@@ -90,17 +90,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col w-full align-center gap-4">
-        <h3 className="dark:text-[var(--color-lightWhite)]">Experiences</h3>
+      <section
+        id="certificates"
+        className="flex flex-col w-full align-center gap-4"
+      >
+        <h3 className="dark:text-[var(--color-lightWhite)]">Certificates</h3>
         <div className="flex flex-col gap-8">
-          {loadingExperiences
+          {loadingCertificates
             ? Array(1)
                 .fill(0)
                 .map((_, index) => <LoadingPlaceholder key={index} />)
-            : experiences.map((experience) => (
-                <ProjectExperiences
-                  key={experience.id}
-                  experience={experience}
+            : certificates.map((certificate) => (
+                <ProjectCertificates
+                  key={certificate.id}
+                  certificate={certificate}
                 />
               ))}
         </div>
