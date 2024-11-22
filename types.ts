@@ -16,3 +16,15 @@ export interface Certificate {
   course: string;
   link: string;
 }
+
+export interface Blogs {
+  id: string;
+  title: string;
+  author: string;
+  createdAt: string;
+  description: string;
+  lastCommit?: {
+    title: string;
+    createdAt: string;
+  } | null; // Tillat null-verdi
+}
