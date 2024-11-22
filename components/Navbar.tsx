@@ -38,7 +38,7 @@ export default function Navbar() {
         >
           Blog
         </Link>
-        <Link
+        {/* <Link
           href="#certificates"
           className={
             pathname === "/blog"
@@ -47,7 +47,7 @@ export default function Navbar() {
           }
         >
           Certificates
-        </Link>
+        </Link> */}
       </div>
       <ThemeSwitcher />
     </nav>
