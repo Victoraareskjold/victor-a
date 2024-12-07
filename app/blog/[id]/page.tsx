@@ -23,7 +23,14 @@ export default async function blogPage({ params }: Props) {
 
   return (
     <main>
-      <h1 dangerouslySetInnerHTML={{ __html: blog.title }} />
+      <div>
+        <h1 dangerouslySetInnerHTML={{ __html: blog.title }} />
+        <p
+          className="dark:text-[var(--color-lightWhite)]"
+          dangerouslySetInnerHTML={{ __html: blog.description }}
+        />
+      </div>
+
       <section>
         <h3 className="dark:text-[var(--color-lightWhite)] mb-2">
           All commits:
@@ -35,7 +42,7 @@ export default async function blogPage({ params }: Props) {
               <p className="dark:text-[var(--color-lightWhite)] ">
                 {commit.description}
               </p>
-              <p className="dark:text-[var(--color-lightWhite)] ">
+              <p className="dark:text-[var(--color-lightWhite)]">
                 {new Date(commit.createdAt).toLocaleDateString("nb-NO")}
               </p>
             </li>

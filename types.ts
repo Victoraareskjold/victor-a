@@ -23,6 +23,7 @@ export interface Blogs {
   author: string;
   createdAt: string;
   description: string;
+  commits: any;
   lastCommit?: {
     title: string;
     createdAt: string;

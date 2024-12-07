@@ -18,14 +18,24 @@ export default function BlogCard({ blog }: BlogCardProps) {
         <p className="dark:text-[var(--color-lightWhite)] line-clamp-2">
           {blog.description}
         </p>
-        <h3 className="dark:text-[var(--color-lightWhite)] w-full">
+        {/* <h3 className="dark:text-[var(--color-lightWhite)] w-full">
           Most recent update:{" "}
           {blog.lastCommit
             ? `${blog.lastCommit.title} - ${new Date(
                 blog.lastCommit.createdAt
               ).toLocaleDateString("nb-NO")}`
             : "No commits yet"}
-        </h3>
+        </h3> */}
+        <div className="flex flex-row gap-8">
+          <h3>Total Commits: {blog.commits.length}</h3>
+          <h3>
+            {blog.lastCommit
+              ? `Last Commit was: ${new Date(
+                  blog.lastCommit.createdAt
+                ).toLocaleDateString("nb-NO")}`
+              : "No commits yet"}
+          </h3>
+        </div>
       </div>
     </Link>
   );

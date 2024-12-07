@@ -75,6 +75,18 @@ export async function getBlogs(): Promise<Blogs[]> {
       const data = doc.data();
 
       const postsRef = collection(db, "blog", doc.id, "commits");
+      const commitsSnapshot = await getDocs(postsRef); // Hent alle commits
+
+      const commits = commitsSnapshot.docs.map((commitDoc) => {
+        const commitData = commitDoc.data();
+        return {
+          id: commitDoc.id,
+          title: commitDoc.id || "No title.",
+          createdAt: commitData.createdAt?.toDate().toISOString() || "No date.",
+          description: commitData.description || "No description.",
+        };
+      });
+
       const lastCommitQuery = query(
         postsRef,
         orderBy("createdAt", "desc"),
@@ -85,8 +97,7 @@ export async function getBlogs(): Promise<Blogs[]> {
       let lastCommit = null;
       if (!lastCommitSnap.empty) {
         const commitDoc = lastCommitSnap.docs[0];
-
-        const commitData = lastCommitSnap.docs[0].data();
+        const commitData = commitDoc.data();
         lastCommit = {
           title: commitDoc.id || "",
           createdAt: commitData.createdAt?.toDate().toISOString() || "",
@@ -100,6 +111,7 @@ export async function getBlogs(): Promise<Blogs[]> {
         description: data.description || "No description.",
         createdAt: data.createdAt?.toDate().toISOString() || "No date.",
         lastCommit,
+        commits, // Legg til commits her
       } as Blogs;
     })
   );
