@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import LoadingPlaceholder from "@/components/LoadingPlaceholder";
 import BlogCard from "@/components/BlogCard";
+import LoadingPlaceholder from "@/components/LoadingPlaceholder";
 import { Blogs } from "@/types";
 import { getBlogs } from "../utils/firebaseFunctions";
 

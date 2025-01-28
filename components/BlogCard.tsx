@@ -1,5 +1,5 @@
-import { Blogs } from "../types";
 import Link from "next/link";
+import { Blogs } from "../types";
 
 interface BlogCardProps {
   blog: Blogs;
@@ -7,7 +7,10 @@ interface BlogCardProps {
 
 export default function BlogCard({ blog }: BlogCardProps) {
   return (
-    <Link href={`/blog/${blog.id}`} className="project-card hover:opacity-50">
+    <Link
+      href={`/blog/${blog.id}`}
+      className="project-card hover:opacity-50 mb-8"
+    >
       {/* <img
         className="max-h-44 w-full h-full object-cover object-top rounded-md"
         src={blog.heroImage}
