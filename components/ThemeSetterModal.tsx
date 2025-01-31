@@ -19,6 +19,10 @@ export default function ThemeSetterModal() {
     }
   }, []);
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   if (!showModal) return null;
 
   return (
@@ -26,7 +30,10 @@ export default function ThemeSetterModal() {
       <p className="dark:text-[var(--color-lightWhite)]">
         Theme automatically set to your system settings.
       </p>
-      <button className="absolute top-3 right-4 dark:text-zinc-300 text-zinc-500">
+      <button
+        className="absolute top-3 right-4 dark:text-zinc-300 text-zinc-500"
+        onClick={closeModal}
+      >
         ⨉
       </button>
       <div className="loading-bar"></div>
