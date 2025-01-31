@@ -10,7 +10,6 @@ interface certificateCardProps {
 export default function CertificateCard({ certificate }: certificateCardProps) {
   return (
     <Link
-      /* href={`/certificates/${certificate.id}`} */
       href={certificate.link}
       target="_blank"
       className="project-card hover:opacity-50"

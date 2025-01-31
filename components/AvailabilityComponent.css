@@ -9,7 +9,7 @@
   overflow: hidden;
   display: inline-block;
   animation: marquee 10s linear infinite;
-  vertical-align: middle; /* Teksten justeres vertikalt */
+  vertical-align: middle;
 }
 
 .marquee p {

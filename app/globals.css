@@ -107,3 +107,20 @@ p {
   font-size: 0.8rem;
   color: var(--color-primary);
 }
+
+.loading-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #7ec09e;
+  animation: loadingAnimation 5s linear forwards;
+  border-radius: 10px;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}

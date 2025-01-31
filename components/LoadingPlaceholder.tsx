@@ -1,5 +1,3 @@
-// components/LoadingPlaceholder.tsx
-
 export default function LoadingPlaceholder() {
   return (
     <div className="project-card animate-pulse">

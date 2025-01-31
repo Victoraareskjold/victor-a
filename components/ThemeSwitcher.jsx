@@ -23,13 +23,11 @@ const ThemeSwitcher = () => {
           currentTheme === "dark" ? "bg-slate-200" : "bg-slate-200"
         }`}
       >
-        {/* Sirkelen som beveger seg */}
         <div
           className={`absolute inset-y-1  w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
             currentTheme === "dark" ? "translate-x-8" : "translate-x-0"
           }`}
         />
-        {/* Ikonene for sol og måne */}
         <div className="absolute inset-y-0 left-2 flex items-center justify-center">
           <Image alt="Link" src="/sun.svg" width="16" height="16" />
         </div>
