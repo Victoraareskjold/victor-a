@@ -1,4 +1,4 @@
-import { getCertificates } from "../../utils/firebaseFunctions";
+import { getCertificates } from "../../../utils/firebaseFunctions";
 import { Certificate } from "../../../types";
 import { notFound } from "next/navigation";
 

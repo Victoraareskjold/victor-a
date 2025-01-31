@@ -7,7 +7,7 @@ import {
   limit,
 } from "firebase/firestore";
 import { db } from "../lib/firebase";
-import { Project, Certificate, Blogs } from "../../types";
+import { Project, Certificate, Blogs } from "../types";
 
 export async function getProjects(projectId?: string): Promise<Project[]> {
   const projectsCollection = collection(db, "work");
