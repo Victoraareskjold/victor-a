@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getCertificates, getProjects } from "./utils/firebaseFunctions";
+import { getCertificates, getProjects } from "../utils/firebaseFunctions";
 import { Certificate, Project } from "../types";
 import Image from "next/image";
 import ProjectCard from "../components/ProjectCard";
 import ProjectCertificates from "../components/ProjectCertificates";
 import LoadingPlaceholder from "../components/LoadingPlaceholder";
-import AvailabilityComponent from "@/components/AvailabilityComponent";
+import AvailabilityComponent from "../components/AvailabilityComponent";
+import { track } from "@vercel/analytics";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -60,6 +61,7 @@ export default function Home() {
           <a
             className="w-fit block bg-[var(--color-primary)] py-1 px-3 rounded-full flex flex-row gap-2 items-center"
             href="https://github.com/Victoraareskjold"
+            onClick={() => track("Github_Click")}
             target="_blank"
           >
             <p className="btn">Victoraareskjold</p>
@@ -69,6 +71,7 @@ export default function Home() {
             className="w-fit block bg-[var(--color-grey)] py-1 px-3 rounded-full flex flex-row gap-2 items-center"
             href="resume.pdf"
             target="_blank"
+            onClick={() => track("Resume_Click")}
           >
             <p className="btnSecondary">My Resume</p>
             <Image alt="Link" src="link.svg" width="10" height="10" />

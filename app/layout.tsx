@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 
-import ThemeProvider from "./utils/ThemeProvider";
-import ThemeSwitcher from "./../components/ThemeSwitcher";
+import ThemeProvider from "../utils/ThemeProvider";
 
 import { Inter, Montserrat } from "next/font/google";
 
@@ -18,7 +17,6 @@ const inter = Inter({
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-
   variable: "--font-montserrat",
 });
 

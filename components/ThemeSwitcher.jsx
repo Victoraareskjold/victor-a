@@ -31,10 +31,10 @@ const ThemeSwitcher = () => {
         />
         {/* Ikonene for sol og måne */}
         <div className="absolute inset-y-0 left-2 flex items-center justify-center">
-          <Image alt="Link" src="sun.svg" width="16" height="16" />
+          <Image alt="Link" src="/sun.svg" width="16" height="16" />
         </div>
         <div className="absolute inset-y-0 right-2 flex items-center justify-center">
-          <Image alt="Link" src="moon.svg" width="16" height="16" />
+          <Image alt="Link" src="/moon.svg" width="16" height="16" />
         </div>
       </button>
     </div>

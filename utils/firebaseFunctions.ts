@@ -6,7 +6,7 @@ import {
   where,
   limit,
 } from "firebase/firestore";
-import { db } from "../../lib/firebase";
+import { db } from "../lib/firebase";
 import { Project, Certificate, Blogs } from "../../types";
 
 export async function getProjects(projectId?: string): Promise<Project[]> {

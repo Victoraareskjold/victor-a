@@ -1,7 +1,7 @@
-import { getProjects } from "../../utils/firebaseFunctions";
-import { Project } from "../../../types";
+"use client";
+import { track } from "@vercel/analytics";
+import { getProjects } from "../../../utils/firebaseFunctions";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 
 interface Props {
   params: {
@@ -30,6 +30,7 @@ export default async function ProjectPage({ params }: Props) {
             href={"https://" + project.link}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track(`Project_${project}_Click`)}
           >
             Visit {project.name}
           </a>
@@ -47,7 +48,7 @@ export default async function ProjectPage({ params }: Props) {
       {project.preview ? (
         <div>
           <div dangerouslySetInnerHTML={{ __html: project.preview }}></div>
-          <p className="mt-4 text-center">
+          <p className="mt-4 dark:text-[var(--color-lightWhite)] text-center">
             &#8593; Try it out yourself &#8593;
           </p>
         </div>

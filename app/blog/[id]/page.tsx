@@ -1,4 +1,4 @@
-import { getBlogs, getAllCommits } from "../../utils/firebaseFunctions";
+import { getBlogs, getAllCommits } from "../../../utils/firebaseFunctions";
 import { Blogs } from "../../../types";
 import { notFound } from "next/navigation";
 import Link from "next/link";

@@ -30,8 +30,10 @@ export default function BlogCard({ blog }: BlogCardProps) {
             : "No commits yet"}
         </h3> */}
         <div className="flex flex-row gap-8">
-          <h3>Total Commits: {blog.commits.length}</h3>
-          <h3>
+          <h3 className="dark:text-[var(--color-lightWhite)]">
+            Total Commits: {blog.commits.length}
+          </h3>
+          <h3 className="dark:text-[var(--color-lightWhite)]">
             {blog.lastCommit
               ? `Last Commit was: ${new Date(
                   blog.lastCommit.createdAt
