@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import ThemeProvider from "../utils/ThemeProvider";
 
@@ -33,6 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics gaId="G-6VNEE248WG" />
+      </head>
       <body
         className={`${inter.variable} ${montserrat.variable} bg-lightBg dark:bg-darkBg min-h-screen transition-colors duration-300`}
       >
