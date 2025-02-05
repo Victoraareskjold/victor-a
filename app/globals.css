@@ -6,7 +6,7 @@
   :root {
     --color-primary: rgba(17, 17, 17, 1);
     --color-lightPrimary: color(display-p3 0.392 0.392 0.392);
-    --color-grey: rgb(241, 241, 241);
+    --color-grey: rgb(230, 230, 230);
     --color-lightWhite: rgb(255, 255, 255, 0.8);
   }
 }
@@ -71,6 +71,10 @@ p {
   font-weight: 400;
   font-family: var(--font-montserrat);
   color: var(--color-lightPrimary);
+}
+
+a:hover {
+  opacity: 0.7;
 }
 
 .headerText {

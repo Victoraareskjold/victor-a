@@ -17,12 +17,12 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class", // Class-based dark mode
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        darkBg: "#1a1a1a", // Tilpasset bakgrunn for mørk modus
-        lightBg: "#f8f8f8", // Tilpasset bakgrunn for lys modus (valgfritt)
+        darkBg: "#1a1a1a",
+        lightBg: "#f8f8f8",
       },
     },
   },

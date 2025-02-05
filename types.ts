@@ -27,5 +27,5 @@ export interface Blogs {
   lastCommit?: {
     title: string;
     createdAt: string;
-  } | null; // Tillat null-verdi
+  } | null;
 }

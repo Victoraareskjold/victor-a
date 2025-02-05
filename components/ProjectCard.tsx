@@ -9,7 +9,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
       href={`/work/${project.id}`}
-      className="project-card hover:opacity-50"
+      className="project-card hover:opacity-50 duration-500"
     >
       <img
         className="max-h-44 w-full h-full object-cover object-top rounded-md"

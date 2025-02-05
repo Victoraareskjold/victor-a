@@ -12,7 +12,7 @@ export default function CertificateCard({ certificate }: certificateCardProps) {
     <Link
       href={certificate.link}
       target="_blank"
-      className="project-card hover:opacity-50"
+      className="project-card hover:opacity-50 duration-200"
       onClick={() => track(`Certificate${certificate}_Click`)}
     >
       <div className="flex flex-col gap-1">

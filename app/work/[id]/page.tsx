@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: Props) {
         <h1>{project.name}</h1>
         {project.link ? (
           <a
-            className="dark:text-white"
+            className="dark:text-white hover:opacity-50 duration-500"
             style={{ textDecoration: "underline", fontWeight: 500 }}
             href={"https://" + project.link}
             target="_blank"

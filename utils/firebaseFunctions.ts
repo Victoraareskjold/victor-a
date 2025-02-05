@@ -75,7 +75,7 @@ export async function getBlogs(): Promise<Blogs[]> {
       const data = doc.data();
 
       const postsRef = collection(db, "blog", doc.id, "commits");
-      const commitsSnapshot = await getDocs(postsRef); // Hent alle commits
+      const commitsSnapshot = await getDocs(postsRef);
 
       const commits = commitsSnapshot.docs.map((commitDoc) => {
         const commitData = commitDoc.data();
@@ -111,7 +111,7 @@ export async function getBlogs(): Promise<Blogs[]> {
         description: data.description || "No description.",
         createdAt: data.createdAt?.toDate().toISOString() || "No date.",
         lastCommit,
-        commits, // Legg til commits her
+        commits,
       } as Blogs;
     })
   );
@@ -133,8 +133,6 @@ export async function getAllCommits(blogId: string) {
       description: data.description || "No description.",
     };
   });
-
-  console.log(commits);
 
   return commits;
 }

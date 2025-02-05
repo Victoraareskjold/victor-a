@@ -9,7 +9,7 @@ export default function BlogCard({ blog }: BlogCardProps) {
   return (
     <Link
       href={`/blog/${blog.id}`}
-      className="project-card hover:opacity-50 mb-8"
+      className="project-card hover:opacity-50 duration-500 mb-8"
     >
       <div className="flex flex-col gap-1">
         <h2 className="dark:text-[var(--color-lightWhite)] ">{blog.title}</h2>

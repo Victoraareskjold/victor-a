@@ -29,7 +29,7 @@ export default function Navbar() {
     <nav className="flex w-full justify-between py-4 text-white items-center">
       <Link
         href="/"
-        className="text-[var(--color-primary)] font-medium p-2 rounded-full"
+        className="text-[var(--color-primary)] font-medium p-2 rounded-full hover:opacity-50 duration-200"
       >
         <Image alt="logo" height="20" width="20" src={logoSrc} />
       </Link>
