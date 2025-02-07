@@ -90,7 +90,7 @@ export default function Home() {
             <p className="btn dark:text-[var(--color-primary)]">
               Victoraareskjold
             </p>
-            <Image alt="Link" src={githubSvgSrc} width="16" height="16" />
+            <Image alt="Github" src={githubSvgSrc} width="16" height="16" />
           </a>
           <a
             className="w-fit block bg-[var(--color-grey)] dark:bg-transparent py-1 px-3 rounded-full flex flex-row gap-2 items-center duration-500"
