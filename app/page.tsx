@@ -52,7 +52,7 @@ export default function Home() {
 
     const linkSvgSrc = () => {
       const src =
-        currentTheme === "light" ? "./linkDark.svg" : "./linkLight.svg";
+        currentTheme === "light" ? "./darkLink.svg" : "./lightLink.svg";
       setLinkSvgSrc(src);
     };
 
