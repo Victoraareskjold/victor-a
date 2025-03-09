@@ -14,9 +14,8 @@ export default function ThemeSwitcher() {
 
   if (!mounted) return null;
 
-  const sunSrc = currentTheme === "light" ? "./sunDark.svg" : "./sunLight.svg";
-  const moonSrc =
-    currentTheme === "light" ? "./moonDark.svg" : "./moonLight.svg";
+  const sunSrc = currentTheme === "light" ? "/sunDark.svg" : "/sunLight.svg";
+  const moonSrc = currentTheme === "light" ? "/moonDark.svg" : "/moonLight.svg";
 
   return (
     <div className="flex items-center justify-center">

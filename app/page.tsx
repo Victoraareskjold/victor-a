@@ -20,8 +20,8 @@ export default function Home() {
 
   const { systemTheme, theme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
-  const [githubSvgSrc, setGithubSvgSrc] = useState("./githubLight.svg");
-  const [linkSvgSrc, setLinkSvgSrc] = useState("./linkDark.svg");
+  const [githubSvgSrc, setGithubSvgSrc] = useState("/githubLight.svg");
+  const [linkSvgSrc, setLinkSvgSrc] = useState("/linkDark.svg");
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -45,14 +45,12 @@ export default function Home() {
 
   useEffect(() => {
     const githubSvgSrc = async () => {
-      const src =
-        currentTheme === "light" ? "./github.svg" : "./githubDark.svg";
+      const src = currentTheme === "light" ? "/github.svg" : "/githubDark.svg";
       setGithubSvgSrc(src);
     };
 
     const linkSvgSrc = () => {
-      const src =
-        currentTheme === "light" ? "./darkLink.svg" : "./lightLink.svg";
+      const src = currentTheme === "light" ? "/darkLink.svg" : "/lightLink.svg";
       setLinkSvgSrc(src);
     };
 
@@ -134,6 +132,7 @@ export default function Home() {
                 <ProjectCertificates
                   key={certificate.id}
                   certificate={certificate}
+                  linkSvgSrc={linkSvgSrc}
                 />
               ))}
         </div>

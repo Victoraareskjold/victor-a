@@ -5,9 +5,13 @@ import { track } from "@vercel/analytics";
 
 interface certificateCardProps {
   certificate: Certificate;
+  linkSvgSrc: string;
 }
 
-export default function CertificateCard({ certificate }: certificateCardProps) {
+export default function CertificateCard({
+  certificate,
+  linkSvgSrc,
+}: certificateCardProps) {
   return (
     <Link
       href={certificate.link}
@@ -24,7 +28,7 @@ export default function CertificateCard({ certificate }: certificateCardProps) {
           <p className="line-clamp-2 dark:text-[var(--color-lightWhite)] underline flex-row">
             {certificate.course}
           </p>
-          <Image alt="Link" src="link.svg" width="10" height="10" />
+          <Image alt="Link" src={linkSvgSrc} width="10" height="10" />
         </div>
       </div>
     </Link>
