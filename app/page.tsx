@@ -7,7 +7,6 @@ import Image from "next/image";
 import ProjectCard from "../components/ProjectCard";
 import ProjectCertificates from "../components/ProjectCertificates";
 import LoadingPlaceholder from "../components/LoadingPlaceholder";
-import AvailabilityComponent from "../components/AvailabilityComponent";
 import { track } from "@vercel/analytics";
 import { useTheme } from "next-themes";
 
@@ -72,7 +71,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="mb-8 max-w-lg dark:text-[var(--color-lightWhite)]">
-            I&apos;m a 22-year-old aspiring Frontend-developer passionate about
+            I&apos;m a 23-year-old aspiring Frontend-developer passionate about
             coding and gaining hands-on experience. Explore my projects to see
             what I&apos;ve been working on!
           </p>

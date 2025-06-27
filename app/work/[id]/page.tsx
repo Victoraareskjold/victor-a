@@ -1,7 +1,6 @@
 "use client";
 import { track } from "@vercel/analytics";
 import { getProjects } from "../../../utils/firebaseFunctions";
-import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface Props {
@@ -34,10 +33,6 @@ export default function ProjectPage({ params }: Props) {
 
     fetchProjects();
   }, [id]);
-
-  /*  if (!project) {
-    notFound();
-  } */
 
   if (loading) {
     return <div>Loading...</div>;
