@@ -2,6 +2,7 @@
 import { track } from "@vercel/analytics";
 import { getProjects } from "../../../utils/firebaseFunctions";
 import { useEffect, useState } from "react";
+import { Play } from "lucide-react";
 
 interface Props {
   params: {
@@ -42,18 +43,6 @@ export default function ProjectPage({ params }: Props) {
     <main>
       <div>
         <h1>{project?.name}</h1>
-        {project?.link ? (
-          <a
-            className="dark:text-white hover:opacity-50 duration-500"
-            style={{ textDecoration: "underline", fontWeight: 500 }}
-            href={"https://" + project?.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track(`Project_${project}_Click`)}
-          >
-            Visit {project?.name}
-          </a>
-        ) : null}
       </div>
 
       {project?.heroImage && !project?.preview ? (
@@ -62,6 +51,28 @@ export default function ProjectPage({ params }: Props) {
 
       {project?.date ? (
         <p className="dark:text-[var(--color-lightWhite)]">{project?.date}</p>
+      ) : null}
+
+      {project?.link ? (
+        <a
+          className="hover:opacity-50 duration-500 dark:bg-white px-4 py-3 w-fit rounded-md flex items-center gap-2 bg-[var(--color-primary)]"
+          href={"https://" + project?.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track(`Project_${project}_Click`)}
+        >
+          <Play
+            strokeWidth={1.5}
+            size={20}
+            className="dark:stroke-[var(--color-primary)] stroke-white"
+          />
+          <p
+            className="dark:text-[var(--color-primary)] text-white"
+            style={{ fontWeight: 500 }}
+          >
+            Live Demo
+          </p>
+        </a>
       ) : null}
 
       {project?.preview ? (
