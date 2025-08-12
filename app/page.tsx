@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { getCertificates, getProjects } from "../utils/firebaseFunctions";
 import { Certificate, Project } from "../types";
 import Image from "next/image";
-import ProjectCard from "../components/ProjectCard";
 import ProjectCertificates from "../components/ProjectCertificates";
 import LoadingPlaceholder from "../components/LoadingPlaceholder";
 import { track } from "@vercel/analytics";
 import { useTheme } from "next-themes";
+import ProjectsView from "@/components/Projects/ProjectsView";
+import Link from "next/link";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -23,23 +24,18 @@ export default function Home() {
   const [linkSvgSrc, setLinkSvgSrc] = useState("/linkDark.svg");
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      const data = await getProjects();
-      setProjects(data);
+    const fetchData = async () => {
+      const projects = await getProjects();
+      const certificates = await getCertificates();
+
+      setProjects(projects);
       setLoadingProjects(false);
-    };
 
-    fetchProjects();
-  }, []);
-
-  useEffect(() => {
-    const fetchCertificates = async () => {
-      const data = await getCertificates();
-      setCertificates(data);
+      setCertificates(certificates);
       setLoadingCertificates(false);
     };
 
-    fetchCertificates();
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -62,8 +58,6 @@ export default function Home() {
       <section>
         <div>
           <h1 className="headerText mb-2 dark:text-white">
-            Web Developer,
-            <br />
             <span>
               <h1 className="headerTextBold dark:text-white">
                 Victor Aareskjold
@@ -71,9 +65,9 @@ export default function Home() {
             </span>
           </h1>
           <p className="mb-8 max-w-lg dark:text-[var(--color-lightWhite)]">
-            I&apos;m a 23-year-old aspiring Frontend-developer passionate about
-            coding and gaining hands-on experience. Explore my projects to see
-            what I&apos;ve been working on!
+            I&apos;m a 23-year-old aspiring developer passionate about coding
+            and gaining hands-on experience. Explore my projects to see what
+            I&apos;ve been working on!
           </p>
         </div>
 
@@ -104,18 +98,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col w-full align-center gap-4">
-        <h3 className="dark:text-[var(--color-lightWhite)]">Projects</h3>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 flex-wrap gap-8 align-center">
-          {loadingProjects
-            ? Array(3)
-                .fill(0)
-                .map((_, index) => <LoadingPlaceholder key={index} />)
-            : projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
+      <div>
+        <h3 className="dark:text-[var(--color-lightWhite)] mb-4">Projects</h3>
+        <ProjectsView
+          viewMode={"list"}
+          projects={projects.slice(0, 3)}
+          loadingProjects={loadingProjects}
+        />
+
+        <div className="flex justify-center mt-8">
+          <Link
+            href="/projects"
+            className="px-3 py-1 text-sm bg-[var(--color-primary)] text-white dark:bg-[var(--color-lightPrimary)] rounded-full"
+          >
+            See more projects
+          </Link>
         </div>
-      </section>
+      </div>
 
       <section
         id="certificates"

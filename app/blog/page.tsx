@@ -25,7 +25,7 @@ export default function Blog() {
     <main>
       <section className="flex flex-col w-full align-center gap-4">
         <h3 className="dark:text-[var(--color-lightWhite)]">Blog posts</h3>
-        <div className="flex-wrap gap-8 align-center">
+        <div className="flex flex-wrap align-center">
           {loadingBlogs
             ? Array(3)
                 .fill(0)

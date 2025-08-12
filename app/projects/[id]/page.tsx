@@ -40,7 +40,7 @@ export default function ProjectPage({ params }: Props) {
   }
 
   return (
-    <main>
+    <main className="flex flex-col gap-12">
       <div>
         <h1>{project?.name}</h1>
       </div>
@@ -55,7 +55,7 @@ export default function ProjectPage({ params }: Props) {
 
       {project?.link ? (
         <a
-          className="hover:opacity-50 duration-500 dark:bg-white px-4 py-3 w-fit rounded-md flex items-center gap-2 bg-[var(--color-primary)]"
+          className="hover:opacity-50 duration-500 dark:bg-white px-2 py-2 w-fit rounded-md flex items-center gap-2 bg-[var(--color-primary)]"
           href={"https://" + project?.link}
           target="_blank"
           rel="noopener noreferrer"
@@ -63,11 +63,11 @@ export default function ProjectPage({ params }: Props) {
         >
           <Play
             strokeWidth={1.5}
-            size={20}
+            size={16}
             className="dark:stroke-[var(--color-primary)] stroke-white"
           />
           <p
-            className="dark:text-[var(--color-primary)] text-white"
+            className="dark:text-[var(--color-primary)] text-white text-sm"
             style={{ fontWeight: 500 }}
           >
             Live Demo
@@ -79,7 +79,7 @@ export default function ProjectPage({ params }: Props) {
         <div>
           <div dangerouslySetInnerHTML={{ __html: project?.preview }}></div>
           <p className="mt-4 dark:text-[var(--color-lightWhite)] text-center">
-            &#8593; Try it out yourself &#8593;
+            &#8593; This is interactive &#8593;
           </p>
         </div>
       ) : null}

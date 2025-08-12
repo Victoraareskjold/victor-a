@@ -8,6 +8,7 @@
     --color-lightPrimary: color(display-p3 0.392 0.392 0.392);
     --color-grey: rgb(230, 230, 230);
     --color-lightWhite: rgb(255, 255, 255, 0.8);
+    --color-secondary: rgba(248, 248, 248, 1);
   }
 }
 
@@ -91,13 +92,6 @@ a:hover {
 
 .bodyText {
   font-family: var(--font-inter);
-}
-
-.project-card {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .btn {
