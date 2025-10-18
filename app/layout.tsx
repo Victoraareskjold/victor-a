@@ -39,12 +39,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} bg-lightBg dark:bg-darkBg min-h-screen transition-colors duration-300`}
       >
-        <Script src="https://www.consentify.app/api/consent?token=d56cb0a3-ec5d-446b-8fa0-36fd6d8237ab"></Script>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <ThemeSetterModal />
 
           <main className="antialiased">
+            <Script src="https://www.consentify.app/api/consent?token=d56cb0a3-ec5d-446b-8fa0-36fd6d8237ab"></Script>
+
             {children}
             <Analytics />
             <SpeedInsights />
