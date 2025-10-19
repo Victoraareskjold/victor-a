@@ -44,10 +44,7 @@ export default function RootLayout({
           <ThemeSetterModal />
 
           <main className="antialiased">
-            <Script
-              strategy="beforeInteractive"
-              src="https://www.consentify.app/api/consent?token=d56cb0a3-ec5d-446b-8fa0-36fd6d8237ab"
-            ></Script>
+            <Script src="https://www.consentify.app/api/consent?token=d56cb0a3-ec5d-446b-8fa0-36fd6d8237ab"></Script>
 
             {children}
             <Analytics />
